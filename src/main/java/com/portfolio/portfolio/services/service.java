@@ -17,7 +17,9 @@ public class service {
     @Autowired
     educationRepository educationRepository;
     @Autowired
-    porjectRepository projectRepository;
+    projectRepository projectRepository;
+    @Autowired
+    skillRepository skillRepository;
    
  
     public ArrayList<userModel> getUsers(){ return (ArrayList<userModel>)userRepository.findAll();}
@@ -39,6 +41,10 @@ public class service {
     public projectModel saveProject(projectModel project){return projectRepository.save(project);}
     public boolean deletePoject(Long id){try{ projectRepository.deleteById(id); return true;}catch(Exception err){return false;}}
 
+    public ArrayList<skillModel> getSkill(){return (ArrayList<skillModel>)skillRepository.findAll();}
+    public Optional<skillModel> getSkillId(Long id){ return skillRepository.findById(id);}
+    public skillModel saveSkill(skillModel skill){return skillRepository.save(skill);}
+    public boolean deleteSkill(Long id){try{ skillRepository.deleteById(id); return true;}catch(Exception err){return false;}}
 
     
 }

@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface porjectRepository extends CrudRepository<projectModel, Long>{
+public interface projectRepository extends CrudRepository<projectModel, Long>{
 
 
 } 

@@ -58,6 +58,17 @@ public class userControllers {
     public String deleteByIdProject(@PathVariable("id") Long id){
         boolean ok = this.services.deletePoject(id);
         if(ok){return "Delete Successfully";}else{ return "dont delete succesfully";}}
+
+    @GetMapping("/skill")
+    public ArrayList<skillModel> getSkill() { return services.getSkill();}
+    @GetMapping("skill/{id}")
+    public Optional<skillModel> getSkillId(@PathVariable("id") Long id){ return this.services.getSkillId(id);}
+    @PostMapping("skill")
+    public skillModel postSkill(@RequestBody skillModel skill){return this.services.saveSkill(skill);}
+    @DeleteMapping("/skill/{id}")
+    public String deleteByIdSkill(@PathVariable("id") Long id){
+        boolean ok = this.services.deleteSkill(id);
+        if(ok){return "Delete Successfully";}else{ return "dont delete succesfully";}}        
     
 }
 
